@@ -30,3 +30,8 @@ terraform/terraform.tfvars
 # Windows
 Thumbs.db
 desktop.ini
+
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
