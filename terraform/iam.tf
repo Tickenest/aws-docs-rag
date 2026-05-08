@@ -146,7 +146,7 @@ resource "aws_iam_role_policy" "refresh" {
         Action = [
           "bedrock:InvokeModel"
         ]
-        Resource = "arn:aws:bedrock:${var.aws_region}::foundation-model/${var.embedding_model_id}"
+        Resource = "*"
       }
     ]
   })
@@ -206,11 +206,7 @@ resource "aws_iam_role_policy" "query" {
         Action = [
           "bedrock:InvokeModel"
         ]
-        Resource = [
-          "arn:aws:bedrock:${var.aws_region}::foundation-model/${var.embedding_model_id}",
-          "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
-          "arn:aws:bedrock:${var.aws_region}:${var.aws_account_id}:inference-profile/${var.generation_model_id}"
-        ]
+        Resource = "*"
       }
     ]
   })
