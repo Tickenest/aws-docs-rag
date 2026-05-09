@@ -1,5 +1,6 @@
 resource "aws_s3vectors_vector_bucket" "main" {
   vector_bucket_name = "docs-rag-vectors-${random_id.suffix.hex}"
+  force_destroy      = true
 
   tags = {
     Project = var.project
